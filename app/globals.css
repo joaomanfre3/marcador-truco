@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Paleta "mesa de bar" */
+  --color-felt-900: #0a3d2e;
+  --color-felt-800: #0d4a37;
+  --color-felt-700: #126149;
+  --color-nos: #f5b301; /* dourado */
+  --color-eles: #e23b3b; /* vermelho */
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  background:
+    radial-gradient(120% 120% at 50% 0%, #126149 0%, #0d4a37 45%, #07301f 100%);
+  color: #fff;
+  min-height: 100dvh;
+  overscroll-behavior: none;
+}
+
+/* Textura sutil de feltro */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: radial-gradient(#fff 0.5px, transparent 0.5px);
+  background-size: 4px 4px;
+  z-index: 0;
+}
+
+::selection {
+  background: #f5b301;
+  color: #07301f;
+}
+
+/* Evita seleção acidental ao tocar nos botões grandes */
+.no-select {
+  user-select: none;
+}
